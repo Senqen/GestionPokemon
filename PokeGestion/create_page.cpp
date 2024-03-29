@@ -41,27 +41,20 @@ void Create_Page::on_pushButton_clicked()
 
 void Create_Page::on_pushButton_2_clicked()
 {
-    emit informationEntered(selectedImage, selectedSound, selectedType1, selectedType2, description, name);
     this->hide();
 }
 
 void Create_Page::on_pushButton_validate_clicked()
 {
-    // Récupérer les informations saisies par l'utilisateur
     QPixmap image = ui->label->pixmap();
     QUrl sound = selectedSound;
     QString type1 = ui->comboBox_type1->currentText();
     QString type2 = ui->comboBox_type2->currentText();
     QString description = ui->plainTextEdit_description->toPlainText();
     QString name = ui->lineEdit_name->text();
-
-    // Émettre le signal informationEntered avec les informations saisies
     emit informationEntered(image, sound, type1, type2, description, name);
-
-    // Fermer la fenêtre Create_Page
     this->close();
 }
-
 void Create_Page::setImage(const QPixmap& pixmap)
 {
     ui->label->setPixmap(pixmap);

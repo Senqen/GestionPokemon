@@ -26,5 +26,4 @@ FORMS += \
         mainwindow.ui
 
 RESOURCES += \
-    background.qrc \
-    resources.qrc
+    background.qrc

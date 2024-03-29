@@ -19,3 +19,4 @@ void gestion_page::addTab(const QPixmap& image, const QUrl& sound, const QString
     gestion_page_tab *tab = new gestion_page_tab(image, sound, type1, type2, description, name, this);
     ui->tabWidget->addTab(tab, name);
 }
+

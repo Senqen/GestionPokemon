@@ -30,19 +30,6 @@
      <attribute name="title">
       <string>Tab 1</string>
      </attribute>
-     <widget class="QPushButton" name="pushButton_2">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>60</y>
-        <width>89</width>
-        <height>25</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Retour</string>
-      </property>
-     </widget>
      <widget class="QTextBrowser" name="textBrowser_2">
       <property name="geometry">
        <rect>
@@ -184,11 +171,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <string>test</string>
       </property>
      </widget>
-    </widget>
-    <widget class="QWidget" name="tab_3">
-     <attribute name="title">
-      <string>Tab 2</string>
-     </attribute>
     </widget>
    </widget>
   </widget>

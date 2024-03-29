@@ -20,6 +20,7 @@ public:
 
     void addTab(const QPixmap& image, const QUrl& sound, const QString& type1, const QString& type2, const QString& description, const QString& name);
 
+
 private:
     Ui::gestion_page *ui;
 };

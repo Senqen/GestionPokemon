@@ -1,13 +1,15 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <QDebug>
-
 #include "create_page.h"
 #include "gestion_page.h"
+#include "gestion_page_tab.h"
+
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow)
+    ui(new Ui::MainWindow),
+    informationProcessed(false)
 {
     ui->setupUi(this);
 }
@@ -26,8 +28,11 @@ void MainWindow::on_Create_button_clicked()
 
 void MainWindow::handleInformationEntered(const QPixmap& image, const QUrl& sound, const QString& type1, const QString& type2, const QString& description, const QString& name)
 {
-    // Handle the received information here
-    // For example, print it to console
+    if (informationProcessed) {
+        // Ignorer le signal si les informations ont déjà été traitées
+        return;
+    }
+
     qDebug() << "Received Information:";
     qDebug() << "Image Path: " << image;
     qDebug() << "Sound URL: " << sound;
@@ -36,9 +41,11 @@ void MainWindow::handleInformationEntered(const QPixmap& image, const QUrl& soun
     qDebug() << "Description: " << description;
     qDebug() << "Name: " << name;
 
-    // Now you can use these variables to create gestion_page object or do other operations
-    gestion_page *gestionPage = static_cast<gestion_page*>(ui->tabWidget->currentWidget());
-    gestionPage->addTab(image, sound, type1, type2, description, name);
+    gestion_page_tab *gestionPageTab = new gestion_page_tab(image, sound, type1, type2, description, name);
+    ui->tabWidget->addTab(gestionPageTab, name);
+
+    // Définir le drapeau sur true pour indiquer que les informations ont été traitées
+    informationProcessed = true;
 }
 
 void MainWindow::on_Quitter_button_clicked()
@@ -48,7 +55,6 @@ void MainWindow::on_Quitter_button_clicked()
 
 void MainWindow::on_Gestion_button_clicked()
 {
-    // Create a gestion_page object with default constructor
     gestion_page *gestionpage = new gestion_page(this);
     ui->tabWidget->addTab(gestionpage, "Gestion des pages");
     ui->tabWidget->setCurrentWidget(gestionpage);

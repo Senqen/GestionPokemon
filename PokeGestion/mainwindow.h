@@ -22,10 +22,9 @@ private slots:
     void on_Gestion_button_clicked();
     void handleInformationEntered(const QPixmap& image, const QUrl& sound, const QString& type1, const QString& type2, const QString& description, const QString& name);
 
-    void on_background_linkActivated(const QString &link);
-
 private:
     Ui::MainWindow *ui;
     QTabWidget *tabWidget;
+    bool informationProcessed;
 };
 #endif // MAINWINDOW_H
