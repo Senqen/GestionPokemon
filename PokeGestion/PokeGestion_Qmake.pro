@@ -21,9 +21,9 @@ HEADERS += \
 
 FORMS += \
         create_page.ui \
-        gestion_page.ui \
         gestion_page_tab.ui \
-        mainwindow.ui
+        mainwindow.ui \
+        gestion_page.ui
 
 RESOURCES += \
     background.qrc

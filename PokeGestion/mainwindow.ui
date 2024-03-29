@@ -34,7 +34,7 @@
       <property name="geometry">
        <rect>
         <x>340</x>
-        <y>240</y>
+        <y>250</y>
         <width>160</width>
         <height>112</height>
        </rect>
@@ -50,7 +50,7 @@
        <item>
         <widget class="QPushButton" name="Gestion_button">
          <property name="text">
-          <string>Gestion</string>
+          <string>Informations</string>
          </property>
         </widget>
        </item>
